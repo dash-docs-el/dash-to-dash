@@ -1,0 +1,15 @@
+language: generic
+
+before_script:
+  - sudo apt-get install -y jq
+
+script:
+  - bash ./dash-to-dash.sh >index.html
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  on:
+    branch: master
