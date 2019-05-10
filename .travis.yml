@@ -4,7 +4,7 @@ before_script:
   - sudo apt-get install -y jq
 
 script:
-  - bash ./dash-to-dash.sh >index.html
+  - bash ./dash-to-dash.sh | tee index.html | grep "DraftJS"
 
 deploy:
   provider: pages
